@@ -1,4 +1,4 @@
-@use '../../_variables'
+@use '../../variables'
 
 .header
     display: flex
@@ -7,3 +7,28 @@
     padding: 1rem
     width: 100%
     background: variables.$green
+    & button
+        position: relative
+        background: variables.$bg-color
+        transition: .3s
+        &:hover, &:focus
+            background: variables.$light-orange
+    &__nav
+        display: flex
+        flex-direction: column
+        gap: .5rem
+        width: 50vw
+        background: variables.$light-orange
+        position: absolute
+        padding: .5rem
+        right: 0
+        top: 5.5rem
+        & a
+            padding: .5rem
+
+.active
+    width: 100%
+    background: variables.$bg-color
+    border-radius: 4px
+    padding: 4px
+    transition: .2s

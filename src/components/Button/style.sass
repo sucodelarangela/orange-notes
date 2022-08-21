@@ -1,0 +1,17 @@
+@use '../../variables'
+
+button
+    padding: 1rem
+    background: variables.$orange
+    border: none
+    border-radius: 8px
+    font-weight: bold
+    transition: .3s
+    &:hover, &:focus
+        background: variables.$light-orange
+
+.delete
+    background: variables.$red
+    color: variables.$bg-color
+    &:hover, &:focus
+        background: variables.$light-red
