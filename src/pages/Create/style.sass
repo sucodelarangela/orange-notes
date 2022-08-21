@@ -3,7 +3,20 @@
 .create
     margin: 4rem 1rem
     &__sections
-        padding-bottom: 2rem
+        padding-bottom: 1rem
+        border-bottom: 1px solid variables.$secondary-color
+        & h2, & p
+            margin: 1rem 0
+            white-space: pre-line
+        &--input, &--textarea
+            width: 100%
+            height: 2.625rem
+            padding: 0.5rem
+            resize: none
+            border-radius: 8px
+            overflow: hidden
+            margin-bottom: 1rem
+        &--textarea
     &__buttons
         display: flex
         justify-content: center
