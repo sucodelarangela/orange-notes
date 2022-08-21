@@ -1,0 +1,17 @@
+@use '../../variables'
+
+.home
+    display: grid
+    grid-auto-flow: column
+    justify-items: center
+    margin: 4rem 1rem
+    &__button
+        text-align: center
+        width: 20rem
+        max-width: 90%
+        padding: 1rem
+        border-radius: 1rem
+        box-shadow: 5px 5px .5rem #bbb, -5px -5px 1rem white
+        &:hover, &:focus
+            outline: 3px dashed variables.$secondary-color
+            box-shadow: none
