@@ -2,16 +2,19 @@
 
 .home
     display: grid
-    grid-auto-flow: column
+    grid-auto-flow: row
     justify-items: center
     margin: 4rem 1rem
+    gap: 1.5rem
     &__button
         text-align: center
         width: 20rem
         max-width: 90%
         padding: 1rem
+        border: 5px solid variables.$bg-color
         border-radius: 1rem
-        box-shadow: 5px 5px .5rem #bbb, -5px -5px 1rem white
+        box-shadow: 5px 5px .5rem #a8a8a8, -5px -5px 1rem white
         &:hover, &:focus
-            outline: 3px dashed variables.$secondary-color
-            box-shadow: none
+            box-shadow: 15px 15px 1rem #a8a8a8, -15px -15px 1rem white
+        &:active
+            box-shadow: 10px 10px 1rem #a8a8a8, -10px -10px 1rem white, inset 10px 10px 1rem #a8a8a8, inset -10px -10px 1rem white
