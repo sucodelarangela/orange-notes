@@ -10,12 +10,13 @@ import Button from '../../components/Button';
 const Create = () => {
     const [title, setTitle] = useState({ name: '', exists: false });
     const [description, setDescription] = useState({ name: '', exists: false });
-    { console.log(description.exists); }
+    const [notes, setNotes] = useState({ name: '', exists: false });
 
     function handleSubmit(e, infoType) {
         e.preventDefault();
         if (infoType === 'title') setTitle({ name: title, exists: true });
         if (infoType === 'description') setDescription({ name: description, exists: true });
+        if (infoType === 'notes') setNotes({ name: notes, exists: true });
     };
 
     return (
@@ -53,7 +54,15 @@ const Create = () => {
             </div>
             <div className='create__sections'>
                 <h2>Notas</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi deserunt minus necessitatibus repellat totam provident quisquam ab omnis cupiditate repudiandae asperiores, optio sequi excepturi doloremque maxime. Obcaecati excepturi tempore a. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem distinctio optio eaque debitis, assumenda illo autem eos voluptatibus, veniam, reprehenderit est minima cum sit corrupti sed? Tenetur rerum incidunt molestiae.</p>
+                <form onSubmit={(e) => handleSubmit(e, 'notes')}>
+                    {!notes.exists && (
+                        <>
+                            <textarea className='create__sections--textarea' onChange={(e) => setNotes(e.target.value)} placeholder='Digite suas observações'></textarea>
+                            {notes.length > 0 && <Button type='submit'>Salvar</Button>}
+                        </>
+                    )}
+                    {notes.exists && <p onClick={() => setNotes({ exists: false })}>{notes.name}</p>}
+                </form>
             </div>
             <div className='create__buttons'>
                 <Button>Salvar tarefa</Button>
