@@ -7,7 +7,7 @@ import { useFetch } from '../../hooks/useFetch';
 
 const Home = () => {
     const url = 'http://localhost:8000/cards';
-    const { data: cards, httpConfig } = useFetch(url);
+    const { data: cards } = useFetch(url);
 
     return (
         <section className='home'>

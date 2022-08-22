@@ -10,6 +10,7 @@ import Header from './components/Header';
 // Pages
 import Home from './pages/Home';
 import Create from './pages/Create';
+import Card from './pages/Card';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/criar-card' element={<Create />} />
+          <Route path='/cards/:id' element={<Card />} />
         </Routes>
       </Router>
     </main>
