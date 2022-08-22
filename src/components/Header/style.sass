@@ -7,18 +7,20 @@
     padding: 1rem
     width: 100%
     background: variables.$green
+    & h1
+        color: variables.$bg-color
     & button
         position: relative
         background: variables.$bg-color
         transition: .3s
         &:hover, &:focus
-            background: variables.$light-orange
+            background: variables.$orange
     &__nav
         display: flex
         flex-direction: column
         gap: .5rem
         width: 50vw
-        background: variables.$light-orange
+        background: variables.$orange
         position: absolute
         padding: .5rem
         right: 0
