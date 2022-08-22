@@ -43,14 +43,15 @@ const Create = () => {
                 {/* Criar componente andamento percentual */}
                 {/* Para os checkbox, criar componente */}
                 <div>
-                    <input type="checkbox" name="" id="" />
-                    <span>Tarefa 1</span>
+                    <input type="checkbox" name="tarefa1" value='tarefa1' id="tarefa1" />
+                    <label htmlFor="tarefa1">Tarefa 1</label>
                 </div>
                 <div>
-                    <input type="checkbox" name="" id="" />
-                    <span>Tarefa 2</span>
+                    <input type="checkbox" name="tarefa1" value='tarefa1' id="tarefa1" />
+                    <label htmlFor="tarefa1">Tarefa 2</label>
                 </div>
-                <Button>Criar tarefa</Button>
+                <br />
+                <input type="text" className='create__sections--input' placeholder='Criar uma tarefa' />
             </div>
             <div className='create__sections'>
                 <h2>Notas</h2>
