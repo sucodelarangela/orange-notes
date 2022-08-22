@@ -6,15 +6,24 @@
     justify-items: center
     margin: 4rem 1rem
     gap: 1.5rem
-    &__button
+    &__button, &__card
         text-align: center
         width: 20rem
         max-width: 90%
         padding: 1rem
         border: 5px solid variables.$bg-color
         border-radius: 1rem
-        box-shadow: 5px 5px .5rem #a8a8a8, -5px -5px 1rem white
+        box-shadow: 5px 5px .5rem variables.$shadow-color, -5px -5px 1rem white
         &:hover, &:focus
-            box-shadow: 15px 15px 1rem #a8a8a8, -15px -15px 1rem white
+            box-shadow: 15px 15px 1rem variables.$shadow-color, -15px -15px 1rem white
         &:active
-            box-shadow: 10px 10px 1rem #a8a8a8, -10px -10px 1rem white, inset 10px 10px 1rem #a8a8a8, inset -10px -10px 1rem white
+            box-shadow: 10px 10px 1rem variables.$shadow-color, -10px -10px 1rem white, inset 10px 10px 1rem variables.$shadow-color, inset -10px -10px 1rem white
+    &__card
+        text-align: left
+        &--title, &--desc
+            margin-bottom: .5rem
+        &--desc
+        &--tasks
+            display: flex
+            align-items: center
+            gap: .5rem

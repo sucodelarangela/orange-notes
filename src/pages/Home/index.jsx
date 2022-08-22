@@ -2,7 +2,7 @@
 import './style.sass';
 
 import { Link } from 'react-router-dom';
-import { FaPlusCircle } from 'react-icons/fa';
+import { FaPlusCircle, FaTasks } from 'react-icons/fa';
 import { useFetch } from '../../hooks/useFetch';
 
 const Home = () => {
@@ -16,8 +16,10 @@ const Home = () => {
                 <p>Criar card</p>
             </Link>
             {cards && cards.map((card) => (
-                <Link className='home__button' /*to={`/cards/${card.id}`}*/ to=''>
-
+                <Link className='home__card' to={`/cards/${card.id}`}>
+                    <h3 className='home__card--title'>{card.title}</h3>
+                    <p className='home__card--desc' maxLength='40'>{`${card.description.substring(0, 50)}...`}</p>
+                    <p className='home__card--tasks'><FaTasks /><span>{card.tasks.length}</span></p>
                 </Link>
             ))}
         </section>
