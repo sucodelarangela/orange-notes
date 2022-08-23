@@ -2,6 +2,7 @@
 
 .create
     margin: 4rem 1rem
+    position: relative
     &__sections
         padding-bottom: 1rem
         border-bottom: 1px solid variables.$secondary-color
@@ -16,8 +17,20 @@
             border-radius: 8px
             overflow: hidden
             margin-bottom: 1rem
+        &--link
+            color: variables.$red
     &__buttons
         display: flex
         justify-content: center
         gap: 2rem
         margin: 1rem 0
+    &__close
+        position: absolute
+        right: 1rem
+        top: .25rem
+        color: variables.$red
+        transition: .3s
+        &:hover
+            color: variables.$light-red
+    & input[type='checkbox']
+        margin-right: 1rem
