@@ -14,16 +14,16 @@
         border: 5px solid variables.$bg-color
         border-radius: 1rem
         box-shadow: 5px 5px .5rem variables.$shadow-color, -5px -5px 1rem white
-        transition: .3s
         &:hover, &:focus
+            transition: 0.3s
             box-shadow: 15px 15px 1rem variables.$shadow-color, -15px -15px 1rem white
         &:active
+            transition: 0s
             box-shadow: 10px 10px 1rem variables.$shadow-color, -10px -10px 1rem white, inset 10px 10px 1rem variables.$shadow-color, inset -10px -10px 1rem white
     &__card
         text-align: left
         &--title, &--desc
             margin-bottom: .5rem
-        &--desc
         &--tasks
             display: flex
             align-items: center

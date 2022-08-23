@@ -7,7 +7,7 @@ import { useFetch } from '../../hooks/useFetch';
 
 const Home = () => {
     const url = 'http://localhost:8000/cards';
-    const { data: cards } = useFetch(url);
+    const { data: cards, loading, error } = useFetch(url);
 
     return (
         <section className='home'>
@@ -15,6 +15,8 @@ const Home = () => {
                 <FaPlusCircle size='5rem' color='#bbb' />
                 <p>Criar card</p>
             </Link>
+            {loading && <p>Carregando...</p>}
+            {error && <p>{error}</p>}
             {cards && cards.map((card) => (
                 <Link className='home__card' to={`/cards/${card.id}`}>
                     <h3 className='home__card--title'>{card.title}</h3>
