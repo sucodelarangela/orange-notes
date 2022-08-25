@@ -1,30 +1,44 @@
 @use '../../variables'
 
 .header
+    position: fixed
+    z-index: 2
+    top: 0
     display: flex
     align-items: center
     justify-content: space-between
-    padding: 1rem
+    padding: 1rem 2rem
     width: 100%
-    background: variables.$green
-    & h1
-        color: variables.$bg-color
-    & button
+    border-bottom: 2px solid variables.$secondary-color
+    background: variables.$bg-color
+    & img
+        height: 70px
+    &__button.menu
+        color: variables.$primary-color
+        background: variables.$bg-color
+        font-size: 1.5rem
         position: relative
         background: variables.$bg-color
+        box-shadow: 5px 5px .5rem variables.$shadow-color, -5px -5px 1rem white
         transition: .3s
         &:hover, &:focus
-            background: variables.$orange
+            transition: 0.3s
+            box-shadow: 15px 15px 1rem variables.$shadow-color, -15px -15px 1rem white
+        &:active
+            transition: 0s
+            box-shadow: 10px 10px 1rem variables.$shadow-color, -10px -10px 1rem white, inset 10px 10px 1rem variables.$shadow-color, inset -10px -10px 1rem white
     &__nav
         display: flex
         flex-direction: column
         gap: .5rem
         width: 50vw
-        background: variables.$orange
+        border: 2px solid variables.$primary-color
+        border-radius: 8px
+        background: variables.$secondary-color
         position: absolute
         padding: .5rem
         right: 0
-        top: 5.5rem
+        top: 6.5rem
         & a
             padding: .5rem
 
