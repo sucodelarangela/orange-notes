@@ -1,6 +1,26 @@
-const UrlTitle = () => {
+import { useState } from "react";
+
+const UrlTitle = ({ href }) => {
+    const [pageTitle, setPageTitle] = useState('');
+    const [loading, setLoading] = useState(true);
+
+    fetch(
+        `https://api.allorigins.win/get?url=${encodeURIComponent(href)}`
+    ).then((response) => {
+        if (response.ok) return response.text();
+        throw new Error("Network response was not ok.");
+    }).then((data) => {
+        const doc = new DOMParser().parseFromString(data, "text/html");
+        let title = doc.querySelector('title');
+        title == null ? setPageTitle(href) : setPageTitle(title.textContent);
+        setLoading(false);
+    });
+
     return (
-        <div>UrlTitle</div>
+        <a className='create__sections--link' href={href}>
+            {loading && <p>Carregando...</p>}
+            {pageTitle == null ? href : pageTitle}
+        </a>
     );
 };
 

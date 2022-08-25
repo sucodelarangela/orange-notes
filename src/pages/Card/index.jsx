@@ -8,6 +8,7 @@ import { FaWindowClose } from 'react-icons/fa';
 
 // components
 import Button from '../../components/Button';
+import UrlTitle from '../../components/UrlTitle';
 
 const Card = () => {
     const { id } = useParams();
@@ -34,7 +35,7 @@ const Card = () => {
                                 <input type="checkbox" name={`task${item.id}`} value={`task${item.id}`} id={`task${item.id}`} />
                                 {
                                     item.task.startsWith('http') ?
-                                        <a className='create__sections--link' href={item.task}>{item.task}</a>
+                                        <UrlTitle href={item.task}></UrlTitle>
                                         :
                                         <label>{item.task}</label>
                                 }
