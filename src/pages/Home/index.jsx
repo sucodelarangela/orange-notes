@@ -18,7 +18,11 @@ const Home = () => {
             {loading && <p>Carregando...</p>}
             {error && <p>{error}</p>}
             {cards && cards.map((card) => (
-                <Link className='home__card' to={`/cards/${card.id}`}>
+                <Link
+                    className='home__card'
+                    to={`/cards/${card.id}`}
+                    key={card.id}
+                >
                     <h3 className='home__card--title'>{card.title}</h3>
                     <p className='home__card--desc' maxLength='40'>{`${card.description.substring(0, 50)}...`}</p>
                     <p className='home__card--tasks'><FaTasks /><span>{card.tasks.length}</span></p>
