@@ -3,11 +3,18 @@ import './style.sass';
 
 // dependencies
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { useFetch } from '../../hooks/useFetch';
 
 // components
 import Button from '../../components/Button';
 
 const Create = () => {
+    const url = 'http://localhost:8000/cards';
+    const { data: items, httpConfig, loading, error } = useFetch(url);
+
+    const navigate = useNavigate();
+
     const [title, setTitle] = useState({ name: '', exists: false });
     const [description, setDescription] = useState({ name: '', exists: false });
     const [notes, setNotes] = useState({ name: '', exists: false });
@@ -18,6 +25,19 @@ const Create = () => {
         if (infoType === 'description') setDescription({ name: description, exists: true });
         if (infoType === 'notes') setNotes({ name: notes, exists: true });
     };
+
+    async function saveTask() {
+        console.log('clicou');
+        const card = {
+            title: title.name,
+            description: description.name,
+            notes: notes.name
+        };
+
+        httpConfig(card, "POST");
+
+        // navigate('/');
+    }
 
     return (
         <section className="create">
@@ -66,10 +86,12 @@ const Create = () => {
                 </form>
             </div>
             <div className='create__buttons'>
-                <Button>Salvar tarefa</Button>
+                <Button handleClick={saveTask} >
+                    Salvar tarefa
+                </Button>
                 <Button warn={true}>Excluir tarefa</Button>
             </div>
-        </section>
+        </section >
     );
 };
 
