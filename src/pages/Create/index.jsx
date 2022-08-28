@@ -36,7 +36,7 @@ const Create = () => {
 
         httpConfig(card, "POST");
 
-        // navigate('/');
+        navigate('/');
     }
 
     return (

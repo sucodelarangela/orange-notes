@@ -2,7 +2,7 @@
 import '../Create/style.sass';
 
 // dependencies
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch';
 import { FaWindowClose } from 'react-icons/fa';
 
@@ -13,7 +13,16 @@ import UrlTitle from '../../components/UrlTitle';
 const Card = () => {
     const { id } = useParams();
     const url = `http://localhost:8000/cards/${id}`;
-    const { data: card, loading, error } = useFetch(url);
+    const { data: card, loading, error, httpConfig } = useFetch(url);
+    const navigate = useNavigate();
+
+    async function deleteTask() {
+        const taskId = url;
+
+        httpConfig(taskId, "DELETE");
+
+        navigate('/');
+    }
 
     return (
         <section className="create">
@@ -30,7 +39,7 @@ const Card = () => {
                     </div>
                     <div className='create__sections'>
                         <h2>Tarefas</h2>
-                        {card.tasks.map((item) => (
+                        {/* {card.tasks.map((item) => (
                             <div key={item.id}>
                                 <input type="checkbox" name={`task${item.id}`} value={`task${item.id}`} id={`task${item.id}`} />
                                 {
@@ -40,7 +49,7 @@ const Card = () => {
                                         <label>{item.task}</label>
                                 }
                             </div>
-                        ))}
+                        ))} */}
                     </div>
                     <div className='create__sections'>
                         <h2>Notas</h2>
@@ -48,7 +57,7 @@ const Card = () => {
                     </div>
                     <div className='create__buttons'>
                         <Button>Salvar tarefa</Button>
-                        <Button warn={true}>Excluir tarefa</Button>
+                        <Button handleClick={deleteTask} warn={true}>Excluir tarefa</Button>
                     </div>
                 </>
             )}
