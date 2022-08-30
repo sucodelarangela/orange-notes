@@ -19,6 +19,12 @@
             margin-bottom: 1rem
         &--link
             color: variables.$red
+        &--editable
+            transition: .3s
+            &:hover, &:focus
+                padding-left: 1rem
+                border-radius: 5px
+                box-shadow: inset 5px 5px .5rem variables.$shadow-color, inset -5px -5px 1rem white
     &__buttons
         display: flex
         justify-content: center

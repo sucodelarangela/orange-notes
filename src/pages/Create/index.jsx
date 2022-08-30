@@ -8,6 +8,8 @@ import { useFetch } from '../../hooks/useFetch';
 
 // components
 import Button from '../../components/Button';
+import Input from '../../components/Input';
+import Textarea from '../../components/Textarea';
 
 const Create = () => {
     const url = 'http://localhost:8000/cards';
@@ -42,21 +44,35 @@ const Create = () => {
     return (
         <section className="create">
             <div className='create__sections'>
-                <form onSubmit={(e) => handleSubmit(e, 'title')}>
-                    {!title.exists && (
-                        <input type="text" className='create__sections--input' onChange={(e) => setTitle(e.target.value)} placeholder='Digite um título' />
-                    )}
-                    {title.exists && <h2 onClick={() => setTitle({ exists: false })}>{title.name}</h2>}
-                </form>
-                <form onSubmit={(e) => handleSubmit(e, 'description')}>
-                    {!description.exists && (
-                        <>
-                            <textarea className='create__sections--textarea' onChange={(e) => setDescription(e.target.value)} placeholder='Digite uma descrição'></textarea>
-                            {description.length > 0 && <Button type='submit'>Salvar</Button>}
-                        </>
-                    )}
-                    {description.exists && <p onClick={() => setDescription({ exists: false })}>{description.name}</p>}
-                </form>
+                {!title.exists && (
+                    <Input
+                        type='text'
+                        placeholder='Digite um título e tecle enter'
+                        handleChange={(e) => setTitle(e.target.value)}
+                        value={title.name}
+                        handleSubmit={(e) => handleSubmit(e, 'title')}
+                    />
+                )}
+                {title.exists && <h2
+                    tabIndex={0}
+                    className='create__sections--editable'
+                    onClick={() => setTitle({ name: title.name, exists: false })}
+                    style={{ cursor: 'pointer' }}>{title.name}</h2>
+                }
+                {!description.exists && (
+                    <Textarea
+                        handleChange={(e) => setDescription(e.target.value)}
+                        handleSubmit={(e) => handleSubmit(e, 'description')}
+                        value={description.name}
+                        placeholder='Digite uma descrição'
+                    ></Textarea>
+                )}
+                {description.exists && <p
+                    tabIndex={0}
+                    className='create__sections--editable'
+                    onClick={() => setDescription({ name: description.name, exists: false })}
+                    style={{ cursor: 'pointer' }}
+                >{description.name}</p>}
             </div>
             <div className='create__sections'>
                 <h2>Tarefas</h2>
@@ -75,15 +91,20 @@ const Create = () => {
             </div>
             <div className='create__sections'>
                 <h2>Notas</h2>
-                <form onSubmit={(e) => handleSubmit(e, 'notes')}>
-                    {!notes.exists && (
-                        <>
-                            <textarea className='create__sections--textarea' onChange={(e) => setNotes(e.target.value)} placeholder='Digite suas observações'></textarea>
-                            {notes.length > 0 && <Button type='submit'>Salvar</Button>}
-                        </>
-                    )}
-                    {notes.exists && <p onClick={() => setNotes({ exists: false })}>{notes.name}</p>}
-                </form>
+                {!notes.exists && (
+                    <Textarea
+                        handleChange={(e) => setNotes(e.target.value)}
+                        handleSubmit={(e) => handleSubmit(e, 'notes')}
+                        value={notes.name}
+                        placeholder='Digite suas observações'
+                    ></Textarea>
+                )}
+                {notes.exists && <p
+                    tabIndex={0}
+                    className='create__sections--editable'
+                    onClick={() => setNotes({ name: notes.name, exists: false })}
+                    style={{ cursor: 'pointer' }}
+                >{notes.name}</p>}
             </div>
             <div className='create__buttons'>
                 <Button handleClick={saveTask} >
