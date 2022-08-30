@@ -89,6 +89,13 @@ const Create = () => {
         }, 200);
     }
 
+    function removeTask(i) {
+        // const index = tasks.findIndex(task => task[i]); //use id instead of index
+        // if (index > -1) { //make sure you found it
+        setTasks(prevTasks => prevTasks.splice(i, 1));
+        // }
+    }
+
     return (
         <section className="create">
             <div className='create__sections'>
@@ -139,7 +146,7 @@ const Create = () => {
                         {task && task.startsWith('http') ?
                             <UrlTitle href={task}></UrlTitle>
                             :
-                            <label>{task}</label>}
+                            <label>{task} - <span onClick={() => setTasks(tasks.filter(item => item != task))}>Deletar</span></label>}
 
                     </div>
                 ))}
