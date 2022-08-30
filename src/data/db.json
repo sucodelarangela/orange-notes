@@ -1,43 +1,44 @@
 {
-    "cards": [
-        {
-            "id": 1,
-            "title": "Links de Front End",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum varius sit amet mattis vulputate. Porta lorem mollis aliquam ut. Tortor at risus viverra adipiscing at.",
-            "tasks": [
-                "https://www.udemy.com/course/react-do-zero-a-maestria-c-hooks-router-api-projetos/",
-                "https://scrollrevealjs.org",
-                "https://www.freecodecamp.org/news/how-to-add-drag-and-drop-in-react-with-react-beautiful-dnd/",
-                "https://mui.com/pt/"
-            ],
-            "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dignissim diam quis enim lobortis scelerisque fermentum dui faucibus. Justo eget magna fermentum iaculis eu non diam phasellus. Purus semper eget duis at tellus at urna condimentum."
-        },
-        {
-            "id": 2,
-            "title": "Desafio FCamara",
-            "description": "Consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat. Tristique magna sit amet purus gravida. Tellus elementum sagittis vitae et.",
-            "tasks": [
-                "Desenhar esboço",
-                "Iniciar React App",
-                "Fazer front com lógica básica",
-                "Implementar back-end",
-                "https://www.npmjs.com/package/json-server"
-            ],
-            "notes": "Non tellus orci ac auctor augue mauris augue neque gravida. Nunc scelerisque viverra mauris in aliquam sem. Tristique nulla aliquet enim tortor. Mattis vulputate enim nulla aliquet. Posuere morbi leo urna molestie at. Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus."
-        },
-        {
-            "id": 3,
-            "title": "Tarefas de casa",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel facilisis volutpat est velit egestas dui. Enim praesent elementum facilisis leo vel fringilla est ullamcorper.",
-            "tasks": [
-                "Limpar o banheiro",
-                "Varrer a casa",
-                "Limpar o aquário",
-                "Lavar as roupas",
-                "Pedir delivery da feirinha",
-                "Cervejinha pós limpeza"
-            ],
-            "notes": "Amet est placerat in egestas erat imperdiet. Duis tristique sollicitudin nibh sit amet commodo."
-        }
-    ]
+  "cards": [
+    {
+      "id": 1,
+      "title": "Links de Front End",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum varius sit amet mattis vulputate. Porta lorem mollis aliquam ut. Tortor at risus viverra adipiscing at.",
+      "tasks": [
+        "https://www.udemy.com/course/react-do-zero-a-maestria-c-hooks-router-api-projetos/",
+        "https://scrollrevealjs.org",
+        "https://www.freecodecamp.org/news/how-to-add-drag-and-drop-in-react-with-react-beautiful-dnd/",
+        "https://mui.com/pt/"
+      ],
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dignissim diam quis enim lobortis scelerisque fermentum dui faucibus. Justo eget magna fermentum iaculis eu non diam phasellus. Purus semper eget duis at tellus at urna condimentum."
+    },
+    {
+      "id": 2,
+      "title": "Desafio FCamara",
+      "description": "Consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat. Tristique magna sit amet purus gravida. Tellus elementum sagittis vitae et.",
+      "tasks": [
+        "Desenhar esboço",
+        "Iniciar React App",
+        "Fazer front com lógica básica",
+        "Implementar back-end",
+        "https://www.npmjs.com/package/json-server"
+      ],
+      "notes": "Non tellus orci ac auctor augue mauris augue neque gravida. Nunc scelerisque viverra mauris in aliquam sem. Tristique nulla aliquet enim tortor. Mattis vulputate enim nulla aliquet. Posuere morbi leo urna molestie at. Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus."
+    },
+    {
+      "id": 3,
+      "title": "Tarefas de casa",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel facilisis volutpat est velit egestas dui. Enim praesent elementum facilisis leo vel fringilla est ullamcorper.",
+      "tasks": [
+        "Limpar o banheiro",
+        "Varrer a casa",
+        "Limpar o aquário",
+        "Lavar as roupas",
+        "Pedir delivery da feirinha",
+        "Cervejinha pós limpeza",
+        "teste"
+      ],
+      "notes": "Amet est placerat in egestas erat imperdiet. Duis tristique sollicitudin nibh sit amet commodo."
+    }
+  ]
 }

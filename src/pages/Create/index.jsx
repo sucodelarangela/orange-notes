@@ -11,18 +11,19 @@ import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Textarea from '../../components/Textarea';
 import { useDataContext } from '../../hooks/useDataContext';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import UrlTitle from '../../components/UrlTitle';
 
 const Create = () => {
     const { id } = useParams();
     const url = `http://localhost:8000/cards/${id}`;
     const { httpConfig } = useFetch('http://localhost:8000/cards/');
-    const { data: card, httpConfig: patchConfig } = useFetch(url);
+    const { data: card, httpConfig: patchConfig, loading } = useFetch(url);
 
     const navigate = useNavigate();
     const { pathname } = useLocation();
 
+    const taskRef = useRef();
     const { title, setTitle, description, setDescription, tasks, setTasks, notes, setNotes } = useDataContext();
 
     useEffect(() => {
@@ -39,10 +40,13 @@ const Create = () => {
         }
     }, [pathname, card, id, url]);
 
+    console.log(tasks);
+
     function handleSubmit(e, infoType) {
         e.preventDefault();
         if (infoType === 'title') setTitle({ name: title, exists: true });
         if (infoType === 'description') setDescription({ name: description, exists: true });
+        if (infoType === 'tasks') setTasks(prevTasks => [...prevTasks, taskRef.current.value]);
         if (infoType === 'notes') setNotes({ name: notes, exists: true });
     };
 
@@ -64,6 +68,7 @@ const Create = () => {
         const alteredCard = {
             title: title.name,
             description: description.name,
+            tasks: tasks,
             notes: notes.name
         };
 
@@ -119,19 +124,26 @@ const Create = () => {
             </div>
             <div className='create__sections'>
                 <h2>Tarefas</h2>
+                <form onSubmit={(e) => { handleSubmit(e, 'tasks'); }}>
+                    <input
+                        type='text'
+                        ref={taskRef}
+                        className='create__sections--input'
+                        placeholder='Adicione uma nova tarefa e tecle enter'
+                    />
+                </form>
                 {/* Criar componente andamento percentual */}
-                {/* Para os checkbox, criar componente */}
                 {tasks && tasks.map((task, i) => (
                     <div id={i}>
                         <input type="checkbox" name={`task-${i}`} value={`task-${i}`} id={`task-${i}`} />
-                        {task.startsWith('http') ?
+                        {task && task.startsWith('http') ?
                             <UrlTitle href={task}></UrlTitle>
                             :
                             <label>{task}</label>}
+
                     </div>
                 ))}
                 <br />
-                <input type="text" className='create__sections--input' placeholder='Criar uma tarefa' />
             </div>
             <div className='create__sections'>
                 <h2>Notas</h2>
