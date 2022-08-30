@@ -10,6 +10,7 @@ import { useFetch } from '../../hooks/useFetch';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Textarea from '../../components/Textarea';
+import { useDataContext } from '../../hooks/useDataContext';
 
 const Create = () => {
     const url = 'http://localhost:8000/cards';
@@ -17,9 +18,7 @@ const Create = () => {
 
     const navigate = useNavigate();
 
-    const [title, setTitle] = useState({ name: '', exists: false });
-    const [description, setDescription] = useState({ name: '', exists: false });
-    const [notes, setNotes] = useState({ name: '', exists: false });
+    const { title, setTitle, description, setDescription, notes, setNotes } = useDataContext();
 
     function handleSubmit(e, infoType) {
         e.preventDefault();
