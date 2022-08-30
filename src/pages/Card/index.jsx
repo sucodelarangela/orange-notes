@@ -21,7 +21,9 @@ const Card = () => {
 
         httpConfig(taskId, "DELETE");
 
-        navigate('/');
+        setTimeout(() => {
+            navigate('/');
+        }, 200);
     }
 
     return (

@@ -29,16 +29,17 @@ const Create = () => {
     };
 
     async function saveTask() {
-        console.log('clicou');
         const card = {
             title: title.name,
             description: description.name,
             notes: notes.name
         };
 
-        httpConfig(card, "POST");
+        await httpConfig(card, "POST");
 
-        navigate('/');
+        setTimeout(() => {
+            navigate('/');
+        }, 200);
     }
 
     return (
