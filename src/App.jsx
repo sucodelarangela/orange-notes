@@ -10,7 +10,6 @@ import Header from './components/Header';
 // Pages
 import Home from './pages/Home';
 import Create from './pages/Create';
-import Card from './pages/Card';
 
 function App() {
 

@@ -1,6 +1,5 @@
 import { createContext, useState } from "react";
-import { useParams } from "react-router";
-import { useFetch } from "../hooks/useFetch";
+import { useLocation } from 'react-router-dom';
 
 export const DataContext = createContext();
 

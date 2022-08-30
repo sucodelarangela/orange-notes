@@ -2,7 +2,7 @@
 import './style.sass';
 
 // dependencies
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 import { useFetch } from '../../hooks/useFetch';
 
@@ -16,17 +16,25 @@ import { useEffect } from 'react';
 const Create = () => {
     const { id } = useParams();
     const url = `http://localhost:8000/cards/${id}`;
-    const { data: card, httpConfig } = useFetch(url);
+    const { httpConfig, loading } = useFetch('http://localhost:8000/cards/');
+    const { data: card } = useFetch(url);
 
     const navigate = useNavigate();
+    const { pathname } = useLocation();
 
     const { title, setTitle, description, setDescription, notes, setNotes } = useDataContext();
 
     useEffect(() => {
-        setTitle({ name: card ? card.title : '', exists: true });
-        setDescription({ name: card ? card.description : '', exists: true });
-        setNotes({ name: card ? card.notes : '', exists: true });
-    }, [url, card]);
+        if (pathname === '/criar-card') {
+            setTitle({ name: '', exists: false });
+            setDescription({ name: '', exists: false });
+            setNotes({ name: '', exists: false });
+        } else {
+            setTitle({ name: card ? card.title : '', exists: card ? true : false });
+            setDescription({ name: card ? card.description : '', exists: card ? true : false });
+            setNotes({ name: card ? card.notes : '', exists: card ? true : false });
+        }
+    }, [pathname, card, id, url]);
 
     function handleSubmit(e, infoType) {
         e.preventDefault();
@@ -41,12 +49,13 @@ const Create = () => {
             description: description.name,
             notes: notes.name
         };
+        console.log(card);
 
         await httpConfig(card, "POST");
 
-        setTimeout(() => {
-            navigate('/');
-        }, 200);
+        // setTimeout(() => {
+        //     navigate('/');
+        // }, 200);
     }
 
     return (
