@@ -2,7 +2,7 @@
 import './style.sass';
 
 // dependencies
-import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 import { useFetch } from '../../hooks/useFetch';
 
@@ -11,14 +11,22 @@ import Button from '../../components/Button';
 import Input from '../../components/Input';
 import Textarea from '../../components/Textarea';
 import { useDataContext } from '../../hooks/useDataContext';
+import { useEffect } from 'react';
 
 const Create = () => {
-    const url = 'http://localhost:8000/cards';
-    const { data: items, httpConfig, loading, error } = useFetch(url);
+    const { id } = useParams();
+    const url = `http://localhost:8000/cards/${id}`;
+    const { data: card, httpConfig } = useFetch(url);
 
     const navigate = useNavigate();
 
     const { title, setTitle, description, setDescription, notes, setNotes } = useDataContext();
+
+    useEffect(() => {
+        setTitle({ name: card ? card.title : '', exists: true });
+        setDescription({ name: card ? card.description : '', exists: true });
+        setNotes({ name: card ? card.notes : '', exists: true });
+    }, [url, card]);
 
     function handleSubmit(e, infoType) {
         e.preventDefault();
