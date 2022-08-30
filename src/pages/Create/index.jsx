@@ -12,6 +12,7 @@ import Input from '../../components/Input';
 import Textarea from '../../components/Textarea';
 import { useDataContext } from '../../hooks/useDataContext';
 import { useEffect } from 'react';
+import UrlTitle from '../../components/UrlTitle';
 
 const Create = () => {
     const { id } = useParams();
@@ -22,16 +23,18 @@ const Create = () => {
     const navigate = useNavigate();
     const { pathname } = useLocation();
 
-    const { title, setTitle, description, setDescription, notes, setNotes } = useDataContext();
+    const { title, setTitle, description, setDescription, tasks, setTasks, notes, setNotes } = useDataContext();
 
     useEffect(() => {
         if (pathname === '/criar-card') {
             setTitle({ name: '', exists: false });
             setDescription({ name: '', exists: false });
+            setTasks([]);
             setNotes({ name: '', exists: false });
         } else {
             setTitle({ name: card ? card.title : '', exists: card ? true : false });
             setDescription({ name: card ? card.description : '', exists: card ? true : false });
+            setTasks(card && card.tasks);
             setNotes({ name: card ? card.notes : '', exists: card ? true : false });
         }
     }, [pathname, card, id, url]);
@@ -118,14 +121,15 @@ const Create = () => {
                 <h2>Tarefas</h2>
                 {/* Criar componente andamento percentual */}
                 {/* Para os checkbox, criar componente */}
-                <div>
-                    <input type="checkbox" name="tarefa1" value='tarefa1' id="tarefa1" />
-                    <label htmlFor="tarefa1">Tarefa 1</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="tarefa1" value='tarefa1' id="tarefa1" />
-                    <label htmlFor="tarefa1">Tarefa 2</label>
-                </div>
+                {tasks && tasks.map((task, i) => (
+                    <div id={i}>
+                        <input type="checkbox" name={`task-${i}`} value={`task-${i}`} id={`task-${i}`} />
+                        {task.startsWith('http') ?
+                            <UrlTitle href={task}></UrlTitle>
+                            :
+                            <label>{task}</label>}
+                    </div>
+                ))}
                 <br />
                 <input type="text" className='create__sections--input' placeholder='Criar uma tarefa' />
             </div>

@@ -6,6 +6,7 @@ export const DataContext = createContext();
 export const DataContextProvider = ({ children }) => {
     const [title, setTitle] = useState({ name: '', exists: false });
     const [description, setDescription] = useState({ name: '', exists: false });
+    const [tasks, setTasks] = useState([]);
     const [notes, setNotes] = useState({ name: '', exists: false });
 
     return (
@@ -15,6 +16,8 @@ export const DataContextProvider = ({ children }) => {
                 setTitle,
                 description,
                 setDescription,
+                tasks,
+                setTasks,
                 notes,
                 setNotes
             }}
