@@ -16,8 +16,8 @@ import { useEffect } from 'react';
 const Create = () => {
     const { id } = useParams();
     const url = `http://localhost:8000/cards/${id}`;
-    const { httpConfig, loading } = useFetch('http://localhost:8000/cards/');
-    const { data: card } = useFetch(url);
+    const { httpConfig } = useFetch('http://localhost:8000/cards/');
+    const { data: card, httpConfig: patchConfig } = useFetch(url);
 
     const navigate = useNavigate();
     const { pathname } = useLocation();
@@ -49,13 +49,36 @@ const Create = () => {
             description: description.name,
             notes: notes.name
         };
-        console.log(card);
 
         await httpConfig(card, "POST");
 
-        // setTimeout(() => {
-        //     navigate('/');
-        // }, 200);
+        setTimeout(() => {
+            navigate('/');
+        }, 200);
+    }
+
+    async function updateTask() {
+        const alteredCard = {
+            title: title.name,
+            description: description.name,
+            notes: notes.name
+        };
+
+        await patchConfig(alteredCard, "PATCH");
+
+        setTimeout(() => {
+            navigate('/');
+        }, 200);
+    }
+
+    async function deleteTask() {
+        const taskId = url;
+
+        httpConfig(taskId, "DELETE");
+
+        setTimeout(() => {
+            navigate('/');
+        }, 200);
     }
 
     return (
@@ -124,10 +147,10 @@ const Create = () => {
                 >{notes.name}</p>}
             </div>
             <div className='create__buttons'>
-                <Button handleClick={saveTask} >
-                    Salvar tarefa
+                <Button handleClick={pathname == '/criar-card' ? saveTask : updateTask} >
+                    {pathname == '/criar-card' ? 'Salvar tarefa' : 'Atualizar tarefa'}
                 </Button>
-                <Button warn={true}>Excluir tarefa</Button>
+                {pathname != '/criar-card' && <Button handleClick={deleteTask} warn={true}>Excluir tarefa</Button>}
             </div>
         </section >
     );

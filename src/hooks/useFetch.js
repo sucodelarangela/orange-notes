@@ -14,7 +14,7 @@ export const useFetch = (url) => {
     const [error, setError] = useState(null);
 
     const httpConfig = (data, method) => {
-        if (method === 'POST') {
+        if (method === 'POST' || method === 'PATCH') {
             setConfig({
                 method, // the same as method: "POST" for example
                 headers: {
@@ -26,8 +26,8 @@ export const useFetch = (url) => {
             setConfig(
                 fetch(data, { method: method })
             );
-
         }
+
         setMethod(method);
         // when we setConfig, we activate useEffect to reload the list.
     };
@@ -58,7 +58,7 @@ export const useFetch = (url) => {
     // refactoring POST
     useEffect(() => {
         const httpRequest = async () => {
-            if (method === 'POST' || method === 'DELETE') {
+            if (method === 'POST' || method === 'PATCH' || method === 'DELETE') {
                 let fetchOptions = [url, config];
 
                 const res = await fetch(...fetchOptions);
