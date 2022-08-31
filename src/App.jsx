@@ -10,6 +10,7 @@ import Header from './components/Header';
 // Pages
 import Home from './pages/Home';
 import Create from './pages/Create';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='/criar-card' element={<Create />} />
           <Route path='/cards/:id' element={<Create />} />
         </Routes>
+        <Footer />
       </Router>
     </main>
   );

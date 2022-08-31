@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <section className='home'>
             <Link className='home__button' to='/criar-card'>
-                <FaPlusCircle size='5rem' color='#bbb' />
+                <FaPlusCircle size='80' color='#bbb' />
                 <p>Criar card</p>
             </Link>
             {loading && <p>Carregando...</p>}

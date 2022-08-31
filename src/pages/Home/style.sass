@@ -1,10 +1,11 @@
 @use '../../variables'
+@use '../../mixins'
 
 .home
     display: grid
     grid-auto-flow: row
     justify-items: center
-    margin: 8rem 1rem
+    margin: 8rem 1rem 4rem
     gap: 1.5rem
     &__button, &__card
         text-align: center
@@ -13,10 +14,10 @@
         padding: 1rem
         border: 5px solid variables.$bg-color
         border-radius: 1rem
-        box-shadow: 5px 5px .5rem variables.$shadow-color, -5px -5px 1rem white
+        @include mixins.shadows
         &:hover, &:focus
             transition: 0.3s
-            box-shadow: 15px 15px 1rem variables.$shadow-color, -15px -15px 1rem white
+            @include mixins.shadows-on-hover
         &:active
             transition: 0s
             box-shadow: 10px 10px 1rem variables.$shadow-color, -10px -10px 1rem white, inset 10px 10px 1rem variables.$shadow-color, inset -10px -10px 1rem white
