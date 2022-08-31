@@ -10,41 +10,47 @@
     padding: 1rem 2rem
     width: 100%
     border-bottom: 2px solid variables.$secondary-color
-    background: variables.$bg-color
+    background: variables.$header-color
     & img
         height: 70px
     &__button.menu
-        color: variables.$primary-color
-        background: variables.$bg-color
+        color: #fff
+        background-color: transparent
         font-size: 1.5rem
         position: relative
-        background: variables.$bg-color
-        box-shadow: 5px 5px .5rem variables.$shadow-color, -5px -5px 1rem white
-        transition: .3s
-        &:hover, &:focus
-            transition: 0.3s
-            box-shadow: 15px 15px 1rem variables.$shadow-color, -15px -15px 1rem white
-        &:active
-            transition: 0s
-            box-shadow: 10px 10px 1rem variables.$shadow-color, -10px -10px 1rem white, inset 10px 10px 1rem variables.$shadow-color, inset -10px -10px 1rem white
+        &::after
+            content: ''
+            background-color: transparent
+            height: 100%
+            width: 100%
+            position: absolute
+            top: 50%
+            right: 50%
+            transform: translateX(50%) translateY(-50%)
+            padding: 2rem
+            z-index: -1
+            transition: .3s
+        &:hover::after, &:focus::after
+            background-color: variables.$header-color-hover
     &__nav
         display: flex
         flex-direction: column
         gap: .5rem
         width: 50vw
-        border: 2px solid variables.$primary-color
+        border: 2px solid variables.$header-color-hover
         border-radius: 8px
-        background: variables.$secondary-color
+        background: variables.$header-color
         position: absolute
         padding: .5rem
         right: 0
         top: 6.5rem
         & a
+            color: #fff
             padding: .5rem
 
 .active
     width: 100%
-    background: variables.$bg-color
+    background: variables.$header-color-hover
     border-radius: 4px
     padding: 4px
     transition: .2s

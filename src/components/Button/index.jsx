@@ -1,5 +1,5 @@
 // styles
-import './style.sass';
+// import './style.sass';
 
 const Button = ({ children, handleClick, warn, type }) => {
     return (

@@ -1,0 +1,7 @@
+@use './variables'
+
+@mixin shadows
+    box-shadow: 5px 5px .5rem variables.$shadow-color, -5px -5px 1rem #fff
+
+@mixin shadows-on-hover
+    box-shadow: 15px 15px 1rem variables.$shadow-color, -15px -15px 1rem #fff

@@ -9,7 +9,6 @@ const Header = () => {
             <img src="/on-logo.svg" alt="Orange Notes" />
             <Menu className='header__menu' as='div'>
                 <Menu.Button className='header__button menu'>Menu</Menu.Button>
-                {/* <nav className='header__nav'> */}
                 <Menu.Items className='header__nav'>
                     <Menu.Item>
                         {({ active }) => (<NavLink className={active ? 'active' : ''} to='/'>Home</NavLink>)}
@@ -18,8 +17,6 @@ const Header = () => {
                         {({ active }) => (<NavLink className={active ? 'active' : ''} to='/criar-card'>Criar tarefa</NavLink>)}
                     </Menu.Item>
                 </Menu.Items>
-                {/* <NavLink to='#'>Perfil</NavLink> */}
-                {/* </nav> */}
             </Menu>
         </header >
     );
