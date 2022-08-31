@@ -30,7 +30,7 @@ const Create = () => {
         if (pathname === '/criar-card') {
             setTitle({ name: '', exists: false });
             setDescription({ name: '', exists: false });
-            setTasks([{}]);
+            setTasks([]);
             setNotes({ name: '', exists: false });
         } else {
             setTitle({ name: card ? card.title : '', exists: card ? true : false });
@@ -44,7 +44,7 @@ const Create = () => {
         e.preventDefault();
         if (infoType === 'title') setTitle({ name: title, exists: true });
         if (infoType === 'description') setDescription({ name: description, exists: true });
-        if (infoType === 'tasks') setTasks(tasks);
+        if (infoType === 'tasks') setTasks(prevTasks => [...prevTasks, { task: taskRef.current.value, checked: false }]);
         if (infoType === 'notes') setNotes({ name: notes, exists: true });
     };
 
@@ -160,15 +160,18 @@ const Create = () => {
                 {/* Criar componente andamento percentual */}
                 {tasks && tasks.map((item, i) => (
                     <div id={i}>
-                        <input type="checkbox" name={`item-${i}`} value={`item-${i}`} id={`item-${i}`} onChange={handleCheck} checked={item.checked ? true : false} />
-                        {item && item.task.startsWith('http') ?
+                        {item.task.startsWith('http') ?
                             <>
+                                <input type="checkbox" name={`item-${i}`} value={`item-${i}`} id={`item-${i}`} onChange={handleCheck} checked={item.checked ? true : false} />
                                 <UrlTitle href={item.task}></UrlTitle>
                                 <span onClick={() => setTasks(tasks.filter(task => item.task != task.task))}>Deletar</span>
                             </>
                             :
-                            <label>{item.task} - <span onClick={() => setTasks(tasks.filter(task => item.task != task.task))}>Deletar</span></label>}
-
+                            <>
+                                <input type="checkbox" name={`item-${i}`} value={`item-${i}`} id={`item-${i}`} onChange={handleCheck} checked={item.checked ? true : false} />
+                                <label>{item.task} - <span onClick={() => setTasks(tasks.filter(task => item.task != task.task))}>Deletar</span></label>
+                            </>
+                        }
                     </div>
                 ))}
                 <br />
