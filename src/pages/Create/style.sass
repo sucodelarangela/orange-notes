@@ -28,6 +28,10 @@
                 padding-left: 1rem
                 border-radius: 5px
                 box-shadow: inset 5px 5px .5rem variables.$shadow-color, inset -5px -5px 1rem white
+        & input[type='checkbox']
+            transform: scale(1.5)
+            &:checked + label, &:checked + a
+                text-decoration: line-through
     &__buttons
         display: flex
         justify-content: center

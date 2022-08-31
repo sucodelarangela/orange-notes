@@ -30,7 +30,7 @@ const Create = () => {
         if (pathname === '/criar-card') {
             setTitle({ name: '', exists: false });
             setDescription({ name: '', exists: false });
-            setTasks([]);
+            setTasks([{}]);
             setNotes({ name: '', exists: false });
         } else {
             setTitle({ name: card ? card.title : '', exists: card ? true : false });
@@ -40,19 +40,18 @@ const Create = () => {
         }
     }, [pathname, card, id, url]);
 
-    console.log(tasks);
-
     function handleSubmit(e, infoType) {
         e.preventDefault();
         if (infoType === 'title') setTitle({ name: title, exists: true });
         if (infoType === 'description') setDescription({ name: description, exists: true });
-        if (infoType === 'tasks') setTasks(prevTasks => [...prevTasks, taskRef.current.value]);
+        if (infoType === 'tasks') setTasks(tasks);
         if (infoType === 'notes') setNotes({ name: notes, exists: true });
     };
 
     async function saveTask() {
         const card = {
             title: title.name,
+            tasks: tasks,
             description: description.name,
             notes: notes.name
         };
@@ -89,12 +88,31 @@ const Create = () => {
         }, 200);
     }
 
-    function removeTask(i) {
-        // const index = tasks.findIndex(task => task[i]); //use id instead of index
-        // if (index > -1) { //make sure you found it
-        setTasks(prevTasks => prevTasks.splice(i, 1));
-        // }
-    }
+    function handleCheck(e) {
+        if (e.target.checked) {
+            setTasks(current =>
+                current.map((item, i) => {
+                    if (i == e.target.value.substr(5)) {
+                        return { ...item, checked: true };
+                    }
+
+                    return item;
+                })
+            );
+            console.log(tasks);
+        } else {
+            setTasks(current =>
+                current.map((item, i) => {
+                    if (i == e.target.value.substr(5)) {
+                        return { ...item, checked: false };
+                    }
+
+                    return item;
+                })
+            );
+            console.log(tasks);
+        }
+    };
 
     return (
         <section className="create">
@@ -140,13 +158,16 @@ const Create = () => {
                     />
                 </form>
                 {/* Criar componente andamento percentual */}
-                {tasks && tasks.map((task, i) => (
+                {tasks && tasks.map((item, i) => (
                     <div id={i}>
-                        <input type="checkbox" name={`task-${i}`} value={`task-${i}`} id={`task-${i}`} />
-                        {task && task.startsWith('http') ?
-                            <UrlTitle href={task}></UrlTitle>
+                        <input type="checkbox" name={`item-${i}`} value={`item-${i}`} id={`item-${i}`} onChange={handleCheck} checked={item.checked ? true : false} />
+                        {item && item.task.startsWith('http') ?
+                            <>
+                                <UrlTitle href={item.task}></UrlTitle>
+                                <span onClick={() => setTasks(tasks.filter(task => item.task != task.task))}>Deletar</span>
+                            </>
                             :
-                            <label>{task} - <span onClick={() => setTasks(tasks.filter(item => item != task))}>Deletar</span></label>}
+                            <label>{item.task} - <span onClick={() => setTasks(tasks.filter(task => item.task != task.task))}>Deletar</span></label>}
 
                     </div>
                 ))}
