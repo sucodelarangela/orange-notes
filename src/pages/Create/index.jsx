@@ -164,12 +164,12 @@ const Create = () => {
                             <>
                                 <input type="checkbox" name={`item-${i}`} value={`item-${i}`} id={`item-${i}`} onChange={handleCheck} checked={item.checked ? true : false} />
                                 <UrlTitle href={item.task}></UrlTitle>
-                                <span onClick={() => setTasks(tasks.filter(task => item.task != task.task))}>Deletar</span>
+                                <span onClick={() => setTasks(tasks.filter(task => item.task != task.task))}> - Deletar</span>
                             </>
                             :
                             <>
                                 <input type="checkbox" name={`item-${i}`} value={`item-${i}`} id={`item-${i}`} onChange={handleCheck} checked={item.checked ? true : false} />
-                                <label>{item.task} - <span onClick={() => setTasks(tasks.filter(task => item.task != task.task))}>Deletar</span></label>
+                                <label>{item.task}<span onClick={() => setTasks(tasks.filter(task => item.task != task.task))}> - Deletar</span></label>
                             </>
                         }
                     </div>

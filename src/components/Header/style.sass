@@ -1,4 +1,5 @@
 @use '../../variables'
+@use '../../mixins'
 
 .header
     position: fixed
@@ -11,6 +12,8 @@
     width: 100%
     border-bottom: 2px solid variables.$secondary-color
     background: variables.$header-color
+    @include mixins.tablet
+        padding: 1rem 6rem
     & img
         height: 70px
     &__button.menu
@@ -35,22 +38,21 @@
     &__nav
         display: flex
         flex-direction: column
-        gap: .5rem
         width: 50vw
         border: 2px solid variables.$header-color-hover
         border-radius: 8px
         background: variables.$header-color
         position: absolute
-        padding: .5rem
         right: 0
         top: 6.5rem
+        @include mixins.tablet
+            width: 30vw
         & a
             color: #fff
-            padding: .5rem
+            padding: 1rem
 
 .active
     width: 100%
     background: variables.$header-color-hover
-    border-radius: 4px
     padding: 4px
     transition: .2s

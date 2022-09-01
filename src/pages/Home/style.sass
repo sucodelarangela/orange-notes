@@ -4,17 +4,26 @@
 .home
     display: grid
     grid-auto-flow: row
+    grid-template-columns: 1fr
+    grid-template-rows: max-content
     justify-items: center
     margin: 8rem 1rem 4rem
     gap: 1.5rem
+    @include mixins.tablet
+        margin: 8rem 5rem 4rem
+        grid-template-columns: 1fr 1fr
+        min-height: 100vh
     &__button, &__card
         text-align: center
         width: 20rem
+        height: 10rem
         max-width: 90%
         padding: 1rem
         border: 5px solid variables.$bg-color
         border-radius: 1rem
         @include mixins.shadows
+        @include mixins.tablet
+            width: 100%
         &:hover, &:focus
             transition: 0.3s
             @include mixins.shadows-on-hover
@@ -22,7 +31,9 @@
             transition: 0s
             box-shadow: 10px 10px 1rem variables.$shadow-color, -10px -10px 1rem white, inset 10px 10px 1rem variables.$shadow-color, inset -10px -10px 1rem white
     &__msg
-        height: 50vh
+        min-height: 100vh
+        @include mixins.tablet
+            grid-column: span 2
     &__card
         text-align: left
         &--title, &--desc
