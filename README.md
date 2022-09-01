@@ -1,4 +1,4 @@
-# Orange Notes | Esquenta Programa de Formação FCamara
+# Orange Notes | Esquenta Programa de Formação FCamara (em andamento)
 
 <div id='top'></div>
 
@@ -6,7 +6,7 @@ _[Read it in English](#English)_
 
 O **Orange Notes** é uma plataforma onde você pode organizar seus cursos, vídeo aulas, artigos e tudo que envolve seu aprendizado através de cards e checklists.
 
-Esse projeto foi desenvolvido para um desafio proposto pela empresa [FCamara](https://www.fcamara.com.br/) como uma forma de preparação para o Programa de Formação de trainees que acontece periodicamente. Trata-se de uma simulação da etapa final do programa oficial, que consiste em um _**hackathon**_ com duração de 15 dias. No entanto, há a diferença de que, neste projeto, os projetos são individuais.
+Esse projeto foi desenvolvido para um desafio proposto pela empresa [FCamara](https://www.fcamara.com.br/) como uma forma de preparação para o Programa de Formação de trainees que acontece periodicamente. Trata-se de uma simulação da etapa final do programa oficial, que consiste em um _**hackathon**_ com duração de 15 dias. No entanto, há a diferença de que, neste desafio, os projetos são individuais.
 
 _Caso queira ver o projeto desenvolvido por mim e minha equipe no último Programa de Formação da FCamara, basta acessar [este repositório](https://github.com/catiuu/TechnicalShare_FCamara_front)._
 
@@ -43,7 +43,7 @@ git clone https://github.com/sucodelarangela/orange-notes.git
 
 2. Acesse a pasta do projeto com seu terminal;
 
-3. Rode o comando `npm install` para instalar as dependências;
+3. Rode o comando `npm install` para instalar as dependências (você precisa ter o [Node.js](https://nodejs.org/en/download/) instalado);
 
 4. Inicie o servidor localmente com o comando `npm run server`. Você deve receber a seguinte mensagem de confirmação:
 
@@ -110,7 +110,7 @@ git clone https://github.com/sucodelarangela/orange-notes.git
 
 2. Access the project root folder on your terminal;
 
-3. Run `npm install` to install all project dependencies (you must have Node.js installed);
+3. Run `npm install` to install all project dependencies (you must have [Node.js](https://nodejs.org/en/download/) installed);
 
 4. Start the json-server locally with the command `npm run server`. You should receive the following message:
 
