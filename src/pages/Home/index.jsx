@@ -15,8 +15,8 @@ const Home = () => {
                 <FaPlusCircle size='80' color='#bbb' />
                 <p>Criar card</p>
             </Link>
-            {loading && <p>Carregando...</p>}
-            {error && <p>{error}</p>}
+            {loading && <p className='home__msg'>Carregando...</p>}
+            {error && <p className='home__msg'>{error}</p>}
             {cards && cards.map((card) => (
                 <Link
                     className='home__card'
