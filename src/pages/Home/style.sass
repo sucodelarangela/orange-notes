@@ -13,6 +13,15 @@
         margin: 8rem 5rem 4rem
         grid-template-columns: 1fr 1fr
         min-height: 100vh
+    @include mixins.desktop
+        margin: 14rem 8rem 4rem
+        grid-template-columns: repeat(3, 1fr)
+        grid-auto-rows: auto
+    &__button
+        @include mixins.desktop
+            align-items: center
+            gap: 1rem
+            font-size: 1.125rem
     &__button, &__card
         text-align: center
         width: 20rem
@@ -24,6 +33,13 @@
         @include mixins.shadows
         @include mixins.tablet
             width: 100%
+        @include mixins.desktop
+            max-width: 31rem
+            padding: 1.5rem
+            height: 12rem
+            display: flex
+            flex-direction: column
+            justify-content: center
         &:hover, &:focus
             transition: 0.3s
             @include mixins.shadows-on-hover
@@ -38,7 +54,16 @@
         text-align: left
         &--title, &--desc
             margin-bottom: .5rem
+        &--title
+            @include mixins.desktop
+                font-size: 1.375rem
+        &--desc
+            @include mixins.desktop
+                font-size: 18px
         &--tasks
             display: flex
             align-items: center
             gap: .5rem
+            @include mixins.desktop
+                font-size: 1.125rem
+                gap: 1rem

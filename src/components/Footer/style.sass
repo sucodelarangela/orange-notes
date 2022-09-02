@@ -1,4 +1,5 @@
 @use '../../variables'
+@use '../../mixins'
 
 .footer
     width: 100%
@@ -6,15 +7,29 @@
     font-weight: 300
     font-size: 0.875rem
     line-height: 1.5rem
+    @include mixins.desktop
+        font-size: 1rem
     & > div
         padding: 1rem
+        @include mixins.tablet
+            padding: 1rem 6rem
+        @include mixins.desktop
+            padding: 2rem 10rem
     &__info
         background: variables.$orange
         &--title
             font-size: 1.125rem
             padding-bottom: 1rem
+            @include mixins.desktop
+                font-size: 1.5rem
+                padding-bottom: 2rem
             & img
                 width: 2rem
+                @include mixins.desktop
+                    width: 2.65rem
+            & + p
+                @include mixins.tablet
+                    width: 50%
     &__author
         background: variables.$dark-orange
         & a

@@ -14,8 +14,15 @@
     background: variables.$header-color
     @include mixins.tablet
         padding: 1rem 6rem
+    @include mixins.desktop
+        padding: 2rem 10rem
+    &__logo
+        display: flex
+        align-items: flex-end
+        color: #fff
     & img
-        height: 70px
+        height: 80px
+        padding-bottom: 0.375rem
     &__button.menu
         color: #fff
         background-color: transparent
@@ -33,6 +40,8 @@
             padding: 2rem
             z-index: -1
             transition: .3s
+            @include mixins.desktop
+                padding: 3rem
         &:hover::after, &:focus::after
             background-color: variables.$header-color-hover
     &__nav
@@ -40,13 +49,16 @@
         flex-direction: column
         width: 50vw
         border: 2px solid variables.$header-color-hover
-        border-radius: 8px
         background: variables.$header-color
         position: absolute
         right: 0
         top: 6.5rem
         @include mixins.tablet
             width: 30vw
+        @include mixins.desktop
+            width: 16.25rem
+            top: 8.5rem
+            right: 112px
         & a
             color: #fff
             padding: 1rem
