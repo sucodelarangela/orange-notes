@@ -17,8 +17,7 @@ _Caso queira ver o projeto desenvolvido por mim e minha equipe no último Progra
 | 🚀 URL         | Veja como rodar localmente no item [**⚙️ Como usar**](#howto)                                                                           |
 | 🔥 Desafio     | [Orange Notes - Regulamento e problemática](https://raw.githubusercontent.com/sucodelarangela/orange-notes/main/public/Regulamento.pdf) |
 
-<!-- Inserir imagem
-![](https://github.com/jacksonadh/Alura7DaysOfCodeHtml/blob/master/img/img%20para%20readme/Desktop.png#vitrinedev) -->
+![](https://raw.githubusercontent.com/sucodelarangela/orange-notes/main/public/og-image.png#vitrinedev)
 
 ## Detalhes do projeto
 
