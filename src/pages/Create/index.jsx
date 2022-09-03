@@ -16,8 +16,10 @@ import UrlTitle from '../../components/UrlTitle';
 
 const Create = () => {
     const { id } = useParams();
-    const url = `http://localhost:8000/cards/${id}`;
-    const { httpConfig } = useFetch('http://localhost:8000/cards/');
+    const url = `https://my-json-server.typicode.com/sucodelarangela/orange-notes-server/${id}`;
+    // const url = `http://localhost:8000/cards/${id}`;
+    const { httpConfig } = useFetch('https://my-json-server.typicode.com/sucodelarangela/orange-notes-server/cards/');
+    // const { httpConfig } = useFetch('http://localhost:8000/cards/');
     const { data: card, httpConfig: patchConfig } = useFetch(url);
 
     const navigate = useNavigate();

@@ -7,7 +7,8 @@ import { useFetch } from '../../hooks/useFetch';
 import { useEffect } from 'react';
 
 const Home = () => {
-    const url = 'http://localhost:8000/cards';
+    // const url = 'http://localhost:8000/cards';
+    const url = 'https://my-json-server.typicode.com/sucodelarangela/orange-notes-server/cards';
     const { data: cards, loading, error } = useFetch(url);
 
     useEffect(() => {
