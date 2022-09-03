@@ -32,7 +32,7 @@ function App() {
         <AuthContextProvider>
           <Header />
           <Routes>
-            <Route path='/' element={<Login />} />
+            <Route exact path='/' element={<Login />} />
             <Route path='/home' element={<Private><Home /></Private>} />
             <Route path='/criar-card' element={<Private><Create /></Private>} />
             <Route path='/cards/:id' element={<Private><Create /></Private>} />
