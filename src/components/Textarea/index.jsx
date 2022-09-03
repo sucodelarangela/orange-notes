@@ -1,6 +1,6 @@
 import Button from "../Button";
 
-const Textarea = ({ handleSubmit, value, handleChange, placeholder }) => {
+const Textarea = ({ handleSubmit, value, handleChange, placeholder, btnType }) => {
     const handleKeyDown = (e) => {
         e.target.style.height = 'inherit';
         e.target.style.height = `${e.target.scrollHeight}px`;
@@ -19,7 +19,7 @@ const Textarea = ({ handleSubmit, value, handleChange, placeholder }) => {
                     placeholder={placeholder}>
                 </textarea>
             </label>
-            <Button type='submit'>Salvar</Button>
+            <Button btnType={btnType} type='submit'>Salvar</Button>
         </form>
     );
 };

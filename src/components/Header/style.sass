@@ -20,6 +20,10 @@
         display: flex
         align-items: flex-end
         color: #fff
+        & h1
+            display: none
+            @include mixins.tablet
+                display: block
     & img
         height: 80px
         padding-bottom: 0.375rem
@@ -37,11 +41,11 @@
             top: 50%
             right: 50%
             transform: translateX(50%) translateY(-50%)
-            padding: 2rem
+            padding: 2.3125rem
             z-index: -1
             transition: .3s
             @include mixins.desktop
-                padding: 3rem
+                padding: 3.3rem
         &:hover::after, &:focus::after
             background-color: variables.$header-color-hover
     &__nav
@@ -52,13 +56,14 @@
         background: variables.$header-color
         position: absolute
         right: 0
-        top: 6.5rem
+        top: 7.25rem
         @include mixins.tablet
             width: 30vw
+            right: 3.6875rem
         @include mixins.desktop
             width: 16.25rem
-            top: 8.5rem
-            right: 112px
+            top: 9.25rem
+            right: 6.625rem
         & a
             color: #fff
             padding: 1rem

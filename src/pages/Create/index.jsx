@@ -134,10 +134,12 @@ const Create = () => {
                 }
                 {!description.exists && (
                     <Textarea
+                        className='save'
                         handleChange={(e) => setDescription(e.target.value)}
                         handleSubmit={(e) => handleSubmit(e, 'description')}
                         value={description.name}
                         placeholder='Digite uma descrição'
+                        btnType='saveTask'
                     ></Textarea>
                 )}
                 {description.exists && <p
@@ -150,8 +152,10 @@ const Create = () => {
             <div className='create__sections'>
                 <h2>Tarefas</h2>
                 <form onSubmit={(e) => { handleSubmit(e, 'tasks'); }}>
+                    <label className='sr-only' htmlFor="task">Adicione uma nova tarefa e tecle enter</label>
                     <input
                         type='text'
+                        id='task'
                         ref={taskRef}
                         className='create__sections--input'
                         placeholder='Adicione uma nova tarefa e tecle enter'
@@ -164,12 +168,12 @@ const Create = () => {
                             <>
                                 <input type="checkbox" name={`item-${i}`} value={`item-${i}`} id={`item-${i}`} onChange={handleCheck} checked={item.checked ? true : false} />
                                 <UrlTitle href={item.task}></UrlTitle>
-                                <span onClick={() => setTasks(tasks.filter(task => item.task != task.task))}> - Deletar</span>
+                                <span onClick={() => setTasks(tasks.filter(task => item.task != task.task))}>Deletar</span>
                             </>
                             :
                             <>
                                 <input type="checkbox" name={`item-${i}`} value={`item-${i}`} id={`item-${i}`} onChange={handleCheck} checked={item.checked ? true : false} />
-                                <label>{item.task}<span onClick={() => setTasks(tasks.filter(task => item.task != task.task))}> - Deletar</span></label>
+                                <label>{item.task}<span onClick={() => setTasks(tasks.filter(task => item.task != task.task))}>Deletar</span></label>
                             </>
                         }
                     </div>
@@ -184,6 +188,7 @@ const Create = () => {
                         handleSubmit={(e) => handleSubmit(e, 'notes')}
                         value={notes.name}
                         placeholder='Digite suas observações'
+                        btnType='saveTask'
                     ></Textarea>
                 )}
                 {notes.exists && <p
@@ -194,10 +199,10 @@ const Create = () => {
                 >{notes.name}</p>}
             </div>
             <div className='create__buttons'>
-                <Button handleClick={pathname == '/criar-card' ? saveTask : updateTask} >
+                <Button handleClick={pathname == '/criar-card' ? saveTask : updateTask} btnType='save-update' >
                     {pathname == '/criar-card' ? 'Salvar tarefa' : 'Atualizar tarefa'}
                 </Button>
-                {pathname != '/criar-card' && <Button handleClick={deleteTask} warn={true}>Excluir tarefa</Button>}
+                {pathname != '/criar-card' && <Button handleClick={deleteTask} btnType='delete'>Excluir tarefa</Button>}
             </div>
         </section >
     );

@@ -6,7 +6,10 @@ import './style.sass';
 const Header = () => {
     return (
         <header className='header'>
-            <h1 className='header__logo'><img src="/on-logo.svg" aria-hidden='true' alt="" /> Orange.notes</h1>
+            <div className="header__logo">
+                <img src="/on-logo.svg" aria-hidden='true' alt="" />
+                <h1>Orange.notes</h1>
+            </div>
             <Menu className='header__menu' as='div'>
                 <Menu.Button className='header__button menu'>Menu</Menu.Button>
                 <Menu.Items className='header__nav'>

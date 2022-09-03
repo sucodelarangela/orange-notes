@@ -24,7 +24,7 @@ const Home = () => {
                     key={card.id}
                 >
                     <h3 className='home__card--title'>{card.title}</h3>
-                    <p className='home__card--desc' maxLength='40'>{`${card.description.substring(0, 50)}...`}</p>
+                    <p className='home__card--desc' maxLength='40'>{`${card.description.substring(0, 40)}...`}</p>
                     <p className='home__card--tasks'><FaTasks /><span>{card.tasks.length}</span></p>
                 </Link>
             ))}

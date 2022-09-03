@@ -16,6 +16,9 @@ button, textarea, input, ::placeholder
   font-family: variables.$main-font
   font-size: 1rem
 
+button
+  cursor: pointer
+
 ::placeholder
   color: variables.$secondary-color
 
@@ -24,3 +27,15 @@ h1
 
 a
   color: variables.$primary-color
+  cursor: pointer
+
+.sr-only
+  position: absolute
+  width: 1px
+  height: 1px
+  padding: 0
+  margin: -1px
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  white-space: nowrap
+  border-width: 0

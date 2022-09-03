@@ -1,8 +1,13 @@
 @use '../../variables'
+@use '../../mixins'
 
 .create
     margin: 10rem 1rem
     position: relative
+    @include mixins.tablet
+        margin: 10rem 6rem
+    @include mixins.desktop
+        margin: 14rem 8rem 4rem
     &__sections
         padding-bottom: 1rem
         border-bottom: 1px solid variables.$secondary-color
@@ -14,9 +19,9 @@
             height: 2.625rem
             padding: 0.5rem
             resize: none
-            border-radius: 8px
+            border-radius: 4px
             overflow: hidden
-            margin-bottom: 1rem
+            margin-bottom: .5rem
         &--link
             color: variables.$red
             transition: .3s
@@ -32,11 +37,27 @@
             transform: scale(1.5)
             &:checked + label, &:checked + a
                 text-decoration: line-through
+                text-decoration-thickness: 1.5px
+        & span
+            font-size: 12px
+            margin-left: .5rem
+            border-radius: 4px
+            background: variables.$orange
+            // border: 1px solid variables.$header-color-hover
+            padding: 0 .5rem
+            transition: .3s
+            color: #fff
+            &:hover
+                background: variables.$dark-orange
+                cursor: pointer
     &__buttons
         display: flex
-        justify-content: center
-        gap: 2rem
+        justify-content: space-around
         margin: 1rem 0
+        @include mixins.desktop
+            justify-content: center
+            gap: 10rem
+            margin: 4rem 0
     &__close
         position: absolute
         right: 1rem

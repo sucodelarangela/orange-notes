@@ -1,10 +1,10 @@
 // styles
-// import './style.sass';
+import './style.sass';
 
-const Button = ({ children, handleClick, warn, type }) => {
+const Button = ({ children, handleClick, btnType, type }) => {
     return (
         <button
-            className={warn ? 'delete' : ''}
+            className={btnType}
             type={type}
             onClick={handleClick}
         >

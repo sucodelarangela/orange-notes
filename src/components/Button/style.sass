@@ -1,18 +1,23 @@
 @use '../../variables'
 
-// button
-//     padding: 1rem
-//     background: variables.$orange
-//     border: none
-//     border-radius: 8px
-//     font-weight: bold
-//     cursor: pointer
-//     transition: .3s
-//     &:hover, &:focus
-//         background: variables.$light-orange
+.saveTask
+    background: variables.$orange
+    color: #fff
+    padding: 0 .5rem
+    border-radius: 4px
+    &:hover
+        background: variables.$dark-orange
 
-// .delete
-//     background: variables.$red
-//     color: variables.$bg-color
-//     &:hover, &:focus
-//         background: variables.$light-red
+.save-update, .delete
+    background: variables.$red
+    color: #fff
+    padding: 1rem
+    border-radius: 4px
+    transition: .3s
+    &:hover, &:focus
+        background: variables.$light-red
+
+.save-update
+    background: variables.$header-color-hover
+    &:hover
+        background: variables.$header-color
