@@ -13,6 +13,8 @@ import Textarea from '../../components/Textarea';
 import { useDataContext } from '../../hooks/useDataContext';
 import { useEffect, useRef } from 'react';
 import UrlTitle from '../../components/UrlTitle';
+import StatusBar from '../../components/StatusBar';
+import { useState } from 'react';
 
 const Create = () => {
     const { id } = useParams();
@@ -20,7 +22,7 @@ const Create = () => {
     // const url = `http://localhost:8000/cards/${id}`;
     const { httpConfig } = useFetch('https://orange-notes-on.herokuapp.com/cards/');
     // const { httpConfig } = useFetch('http://localhost:8000/cards/');
-    const { data: card, httpConfig: patchConfig } = useFetch(url);
+    const { data: card, httpConfig: patchConfig, loading } = useFetch(url);
 
     const navigate = useNavigate();
     const { pathname } = useLocation();
@@ -162,6 +164,8 @@ const Create = () => {
                     />
                 </form>
                 {/* Criar componente andamento percentual */}
+                {loading && <p>Carregando...</p>}
+                {tasks && <StatusBar taskList={tasks} />}
                 {tasks && tasks.map((item, i) => (
                     <div id={i}>
                         {item.task.startsWith('http') ?

@@ -1,0 +1,23 @@
+@use '../../variables'
+@use '../../mixins'
+
+.done
+    background: variables.$green
+    height: 0.5rem
+    margin: 2rem 0
+    border-radius: 0.25rem 0 0 .25rem
+    transition: width .3s
+
+.todo
+    background: #fff
+    height: .5rem
+    margin: 2rem 0
+    border-radius: 0 .25rem .25rem 0
+    transition: width .3s
+
+p
+    font-size: 0.875rem
+    padding-left: .5rem
+    &:first-of-type
+        padding-left: 0
+        padding-right: .5rem
