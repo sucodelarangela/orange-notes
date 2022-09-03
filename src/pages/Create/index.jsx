@@ -18,7 +18,7 @@ const Create = () => {
     const { id } = useParams();
     const url = `http://localhost:8000/cards/${id}`;
     const { httpConfig } = useFetch('http://localhost:8000/cards/');
-    const { data: card, httpConfig: patchConfig, loading } = useFetch(url);
+    const { data: card, httpConfig: patchConfig } = useFetch(url);
 
     const navigate = useNavigate();
     const { pathname } = useLocation();
@@ -59,7 +59,7 @@ const Create = () => {
         await httpConfig(card, "POST");
 
         setTimeout(() => {
-            navigate('/');
+            navigate('/home');
         }, 200);
     }
 
@@ -74,7 +74,7 @@ const Create = () => {
         await patchConfig(alteredCard, "PATCH");
 
         setTimeout(() => {
-            navigate('/');
+            navigate('/home');
         }, 200);
     }
 
@@ -84,7 +84,7 @@ const Create = () => {
         httpConfig(taskId, "DELETE");
 
         setTimeout(() => {
-            navigate('/');
+            navigate('/home');
         }, 200);
     }
 
@@ -99,7 +99,6 @@ const Create = () => {
                     return item;
                 })
             );
-            console.log(tasks);
         } else {
             setTasks(current =>
                 current.map((item, i) => {
@@ -110,7 +109,6 @@ const Create = () => {
                     return item;
                 })
             );
-            console.log(tasks);
         }
     };
 

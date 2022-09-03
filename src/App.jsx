@@ -2,7 +2,7 @@
 import './App.sass';
 
 // dependencies
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 // Components
 import Header from './components/Header';

@@ -101,7 +101,7 @@
       "tasks": [
         {
           "task": "Pesquisar livros e artigos referidos ao assunto",
-          "checked": false
+          "checked": true
         },
         {
           "task": "Ler artigos",

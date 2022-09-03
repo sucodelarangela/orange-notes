@@ -14,12 +14,12 @@ const Header = () => {
             </div>
 
             {
-                pathname == '/home' || pathname == '/criar-card' ?
+                pathname != '/' ?
                     < Menu className='header__menu' as='div'>
                         <Menu.Button className='header__button menu'>Menu</Menu.Button>
                         <Menu.Items className='header__nav'>
                             <Menu.Item>
-                                {({ active }) => (<NavLink className={active ? 'active' : ''} to='/'>Home</NavLink>)}
+                                {({ active }) => (<NavLink className={active ? 'active' : ''} to='/home'>Home</NavLink>)}
                             </Menu.Item>
                             <Menu.Item>
                                 {({ active }) => (<NavLink className={active ? 'active' : ''} to='/criar-card'>Criar tarefa</NavLink>)}
