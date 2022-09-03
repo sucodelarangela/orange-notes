@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 
 const Home = () => {
     // const url = 'http://localhost:8000/cards';
-    const url = 'https://my-json-server.typicode.com/sucodelarangela/orange-notes-server/cards';
+    const url = 'https://orange-notes-on.herokuapp.com/cards';
     const { data: cards, loading, error } = useFetch(url);
 
     useEffect(() => {

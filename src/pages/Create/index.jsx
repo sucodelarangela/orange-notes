@@ -16,9 +16,9 @@ import UrlTitle from '../../components/UrlTitle';
 
 const Create = () => {
     const { id } = useParams();
-    const url = `https://my-json-server.typicode.com/sucodelarangela/orange-notes-server/${id}`;
+    const url = `https://orange-notes-on.herokuapp.com/cards/${id}`;
     // const url = `http://localhost:8000/cards/${id}`;
-    const { httpConfig } = useFetch('https://my-json-server.typicode.com/sucodelarangela/orange-notes-server/cards/');
+    const { httpConfig } = useFetch('https://orange-notes-on.herokuapp.com/cards/');
     // const { httpConfig } = useFetch('http://localhost:8000/cards/');
     const { data: card, httpConfig: patchConfig } = useFetch(url);
 
