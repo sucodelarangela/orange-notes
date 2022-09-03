@@ -4,10 +4,16 @@ import './style.sass';
 import { Link } from 'react-router-dom';
 import { FaPlusCircle, FaTasks } from 'react-icons/fa';
 import { useFetch } from '../../hooks/useFetch';
+import { useEffect } from 'react';
 
 const Home = () => {
     const url = 'http://localhost:8000/cards';
     const { data: cards, loading, error } = useFetch(url);
+
+    useEffect(() => {
+        // 👇️ scroll to top on page load
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }, []);
 
     return (
         <section className='home'>
