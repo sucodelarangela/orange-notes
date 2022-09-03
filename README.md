@@ -1,4 +1,4 @@
-# Orange Notes | Esquenta Programa de Formação FCamara (em andamento)
+# Orange Notes | Esquenta Programa de Formação FCamara
 
 <div id='top'></div>
 
@@ -8,13 +8,24 @@ O **Orange Notes** é uma plataforma onde você pode organizar seus cursos, víd
 
 Esse projeto foi desenvolvido para um desafio proposto pela empresa [FCamara](https://www.fcamara.com.br/) como uma forma de preparação para o Programa de Formação de trainees que acontece periodicamente. Trata-se de uma simulação da etapa final do programa oficial, que consiste em um _**hackathon**_ com duração de 15 dias. No entanto, há a diferença de que, neste desafio, os projetos são individuais.
 
+Faça o login na aplicação utilizando qualquer e-mail e senha que atenda os requisitos.
+
+### 🩹 Melhorias necessárias
+
+-   Melhorar validação do formulário de login também no _submit_ e não apenas no _blur_, acrescentando também mensagens específicas para cada tipo de erro;
+-   Na criação das tarefas dos cards, resetar o valor do _input_ a cada nova tarefa (da forma como está, ao resetar o _input_ salva a tarefa com texto vazio);
+-   Implementar sistema de login com autenticação
+-   Substituir json-server por banco de dados relacional
+
 _Caso queira ver o projeto desenvolvido por mim e minha equipe no último Programa de Formação da FCamara, basta acessar [este repositório](https://github.com/catiuu/TechnicalShare_FCamara_front)._
 
-| 🪧 Vitrine.Dev |                                                                                                                                         |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| ✨ Nome        | **Orange Notes**                                                                                                                        |
-| 🏷️ Tecnologias | React, Vite, Sass, HTML, json-server, headless-ui, react-icons                                                                          |
-| 🚀 URL         | Veja como rodar localmente no item [**⚙️ Como usar**](#howto)                                                                           |
+<!-- prettier-ignore -->
+| 🪧 Vitrine Dev |     |
+| ------------- | --- |
+| ✨ Nome        | **Orange Notes** |
+| 🏷️ Tecnologias | React, Vite, Sass, HTML, json-server, headless-ui, react-icons |
+| 🚀 URL Front-end | [**Acesse o site**](https://orange-notes-on.vercel.app/) ou veja como rodar localmente no item [**⚙️ Como usar**](#howto) |
+| 🚀 URL Back-end | [https://orange-notes-on.herokuapp.com/cards](https://orange-notes-on.herokuapp.com/cards) |
 | 🔥 Desafio     | [Orange Notes - Regulamento e problemática](https://raw.githubusercontent.com/sucodelarangela/orange-notes/main/public/Regulamento.pdf) |
 
 ![](https://raw.githubusercontent.com/sucodelarangela/orange-notes/main/public/og-image.png#vitrinedev)
@@ -27,6 +38,13 @@ _Caso queira ver o projeto desenvolvido por mim e minha equipe no último Progra
   <a href="https://sass-lang.com/" target='_blank'><img src="https://img.shields.io/badge/sass-CC6699?style=for-the-badge&logo=sass&logoColor=white"/></a>
   <a href='https://headlessui.com/react/menu' target='_blank'><img src="https://img.shields.io/badge/Headless UI-66E3FF?style=for-the-badge&logo=headlessui&logoColor=black"/></a>
 </div>
+
+### 🩹 Improvements needed
+
+-   Review login form validation on _submit_ and not only on _blur_, adding specific error messages;
+-   When creating new tasks inside the cards, reset the value of the _input_ at every new task added (the way it is now, when resetting the _input_ the tasks is saved with empty value);
+-   Implementing login system with authentication;
+-   Replace json-server with relational database.
 
 <div id="howto"></div>
 
@@ -79,7 +97,7 @@ git clone https://github.com/sucodelarangela/orange-notes.git
   ➜  Network: use --host to expose
 ```
 
-6. Para usar a aplicação, abra o seu browser preferido e acesse o endereço `http://localhost:5173/`
+6. Para usar a aplicação, abra o seu browser preferido e acesse o endereço `http://localhost:5173/`. Você pode fazer login na aplicação usando qualquer e-mail e senha que atendam os requisitos de validação do front-end.
 
 <a href='#top'>🔼 Voltar ao topo</a>
 
@@ -146,7 +164,7 @@ git clone https://github.com/sucodelarangela/orange-notes.git
   ➜  Network: use --host to expose
 ```
 
-6. To use the app, open your favorite browser and go to the URL `http://localhost:5173/`
+6. To use the app, open your favorite browser and go to the URL `http://localhost:5173/`. You can log in the application using any e-mail address and password that respects the front end validations.
 
 <a href='#top'>🔼 Voltar ao topo</a>
 
