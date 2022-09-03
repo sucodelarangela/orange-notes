@@ -20,9 +20,13 @@
         {
           "task": "https://mui.com/pt/",
           "checked": false
+        },
+        {
+          "task": "https://www.devmedia.com.br/css-box-sizing/36830",
+          "checked": false
         }
       ],
-      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dignissim diam quis enim lobortis scelerisque fermentum dui faucibus. Justo eget magna fermentum iaculis eu non diam phasellus. Purus semper eget duis at tellus at urna condimentum."
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dignissim diam quis enim lobortis scelerisque fermentum dui faucibus. Justo eget magna fermentum iaculis eu non diam phasellus. Purus semper eget duis at tellus at urna condimentum. "
     },
     {
       "id": 2,
@@ -63,11 +67,11 @@
       "tasks": [
         {
           "task": "Limpar o banheiro",
-          "checked": false
+          "checked": true
         },
         {
           "task": "Varrer a casa",
-          "checked": false
+          "checked": true
         },
         {
           "task": "Limpar o aquário",
@@ -75,18 +79,46 @@
         },
         {
           "task": "Lavar as roupas",
-          "checked": false
+          "checked": true
         },
         {
           "task": "Pedir delivery da feirinha",
-          "checked": false
+          "checked": true
         },
         {
           "task": "Cervejinha pós limpeza",
           "checked": false
+        },
+        {
+          "task": "Fazer almoço",
+          "checked": false
         }
       ],
       "notes": "Amet est placerat in egestas erat imperdiet. Duis tristique sollicitudin nibh sit amet commodo."
+    },
+    {
+      "title": "Estudar para TCC",
+      "tasks": [
+        {
+          "task": "Pesquisar livros e artigos referidos ao assunto",
+          "checked": false
+        },
+        {
+          "task": "Ler artigos",
+          "checked": false
+        },
+        {
+          "task": "Ler livros",
+          "checked": false
+        },
+        {
+          "task": "Fazer resenhas",
+          "checked": false
+        }
+      ],
+      "description": "Ler os materiais necessários e construir o texto do TCC",
+      "notes": "Realizar as tarefas por, pelo menos, 2h ao dia.",
+      "id": 4
     }
   ]
 }

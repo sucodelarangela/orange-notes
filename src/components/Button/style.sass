@@ -1,10 +1,21 @@
 @use '../../variables'
 
+.loginBtn
+    background: variables.$orange
+    color: #fff
+    text-transform: uppercase
+    padding: 1rem
+    border-radius: 4px
+    transition: .3s
+    &:hover
+        background: variables.$dark-orange
+
 .saveTask
     background: variables.$orange
     color: #fff
     padding: 0 .5rem
     border-radius: 4px
+    transition: .3s
     &:hover
         background: variables.$dark-orange
 
@@ -18,6 +29,7 @@
         background: variables.$light-red
 
 .save-update
+    transition: .3s
     background: variables.$header-color-hover
     &:hover
         background: variables.$header-color
