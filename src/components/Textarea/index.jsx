@@ -16,7 +16,8 @@ const Textarea = ({ handleSubmit, value, handleChange, placeholder, btnType }) =
                     value={value}
                     onChange={handleChange}
                     onKeyDown={handleKeyDown}
-                    placeholder={placeholder}>
+                    placeholder={placeholder}
+                    required>
                 </textarea>
             </label>
             <Button btnType={btnType} type='submit'>Salvar</Button>

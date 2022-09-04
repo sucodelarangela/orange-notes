@@ -18,10 +18,10 @@ import { useState } from 'react';
 
 const Create = () => {
     const { id } = useParams();
-    const url = `https://orange-notes-on.herokuapp.com/cards/${id}`;
-    // const url = `http://localhost:8000/cards/${id}`;
-    const { httpConfig } = useFetch('https://orange-notes-on.herokuapp.com/cards/');
-    // const { httpConfig } = useFetch('http://localhost:8000/cards/');
+    // const url = `https://orange-notes-on.herokuapp.com/cards/${id}`;
+    const url = `http://localhost:8000/cards/${id}`;
+    // const { httpConfig } = useFetch('https://orange-notes-on.herokuapp.com/cards/');
+    const { httpConfig } = useFetch('http://localhost:8000/cards/');
     const { data: card, httpConfig: patchConfig, loading } = useFetch(url);
 
     const navigate = useNavigate();
@@ -32,10 +32,10 @@ const Create = () => {
 
     useEffect(() => {
         if (pathname === '/criar-card') {
-            setTitle({ name: '', exists: false });
-            setDescription({ name: '', exists: false });
+            setTitle({ name: 'Digite um título', exists: false });
+            setDescription({ name: 'Digite uma descrição', exists: false });
             setTasks([]);
-            setNotes({ name: '', exists: false });
+            setNotes({ name: 'Adicione observações', exists: false });
         } else {
             setTitle({ name: card ? card.title : '', exists: card ? true : false });
             setDescription({ name: card ? card.description : '', exists: card ? true : false });
@@ -142,6 +142,7 @@ const Create = () => {
                         value={description.name}
                         placeholder='Digite uma descrição'
                         btnType='saveTask'
+                        required
                     ></Textarea>
                 )}
                 {description.exists && <p
@@ -161,6 +162,7 @@ const Create = () => {
                         ref={taskRef}
                         className='create__sections--input'
                         placeholder='Adicione uma nova tarefa e tecle enter'
+                        required
                     />
                 </form>
                 {/* Criar componente andamento percentual */}

@@ -119,6 +119,13 @@
       "description": "Ler os materiais necessários e construir o texto do TCC",
       "notes": "Realizar as tarefas por, pelo menos, 2h ao dia.",
       "id": 4
+    },
+    {
+      "title": "Digite um título",
+      "tasks": [],
+      "description": "Digite uma descrição",
+      "notes": "Adicione observações",
+      "id": 5
     }
   ]
 }

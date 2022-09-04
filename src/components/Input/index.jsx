@@ -9,6 +9,7 @@ const Input = ({ type, handleChange, placeholder, value, handleSubmit }) => {
                     value={value}
                     onChange={handleChange}
                     placeholder={placeholder}
+                    required
                 />
             </label>
         </form>

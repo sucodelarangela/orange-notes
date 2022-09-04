@@ -8,12 +8,16 @@ const StatusBar = ({ taskList }) => {
     const [todo, setTodo] = useState('100%');
 
     useEffect(() => {
-        let doneTasks = taskList ? taskList.filter((task) => task.checked == true) : 0;
-        let donePercent = Math.round(doneTasks.length / taskList.length * 100);
-        let todoPercent = 100 - donePercent;
-        setDone(donePercent + '%');
-        setTodo(todoPercent + '%');
-        console.log(doneTasks);
+        if (taskList.length == 0) {
+            setDone('0%');
+        } else {
+            let doneTasks = taskList ? taskList.filter((task) => task.checked == true) : 0;
+            let donePercent = Math.round(doneTasks.length / taskList.length * 100);
+            let todoPercent = 100 - donePercent;
+            setDone(donePercent + '%');
+            setTodo(todoPercent + '%');
+            console.log(doneTasks);
+        }
     }, [taskList]);
 
 
