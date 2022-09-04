@@ -12,10 +12,11 @@ Faça o login na aplicação utilizando qualquer e-mail e senha que atenda os re
 
 ### 🩹 Melhorias necessárias
 
+-   Ao tentar salvar o card sem alterações nos dados já existentes, ocorre um erro que trava a aplicação. Neste caso, deve-se atualizar a página com F5 (os dados atuais não são perdidos);
 -   Melhorar validação do formulário de login também no _submit_ e não apenas no _blur_, acrescentando também mensagens específicas para cada tipo de erro;
 -   Na criação das tarefas dos cards, resetar o valor do _input_ a cada nova tarefa (da forma como está, ao resetar o _input_ salva a tarefa com texto vazio);
--   Implementar sistema de login com autenticação
--   Substituir json-server por banco de dados relacional
+-   Implementar sistema de login com autenticação;
+-   Substituir json-server por banco de dados relacional.
 
 _Caso queira ver o projeto desenvolvido por mim e minha equipe no último Programa de Formação da FCamara, basta acessar [este repositório](https://github.com/catiuu/TechnicalShare_FCamara_front)._
 
@@ -41,6 +42,7 @@ _Caso queira ver o projeto desenvolvido por mim e minha equipe no último Progra
 
 ### 🩹 Improvements needed
 
+-   When trying to save the card without changing the existing data, an error occurs and the page stops responding. In this case, hit **F5** to reload the page (the current data is not lost);
 -   Review login form validation on _submit_ and not only on _blur_, adding specific error messages;
 -   When creating new tasks inside the cards, reset the value of the _input_ at every new task added (the way it is now, when resetting the _input_ the tasks is saved with empty value);
 -   Implementing login system with authentication;
