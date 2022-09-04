@@ -29,38 +29,6 @@
       "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dignissim diam quis enim lobortis scelerisque fermentum dui faucibus. Justo eget magna fermentum iaculis eu non diam phasellus. Purus semper eget duis at tellus at urna condimentum. "
     },
     {
-      "id": 2,
-      "title": "Desafio FCamara",
-      "description": "Consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat. Tristique magna sit amet purus gravida. Tellus elementum sagittis vitae et.",
-      "tasks": [
-        {
-          "task": "Desenhar esboço",
-          "checked": true
-        },
-        {
-          "task": "Iniciar React App",
-          "checked": true
-        },
-        {
-          "task": "Fazer front com lógica básica",
-          "checked": true
-        },
-        {
-          "task": "Implementar back-end",
-          "checked": true
-        },
-        {
-          "task": "https://www.npmjs.com/package/json-server",
-          "checked": false
-        },
-        {
-          "task": "Corrigir outros bugs",
-          "checked": false
-        }
-      ],
-      "notes": "Aplicação inicializada com Vite em vez de create-react-app."
-    },
-    {
       "id": 3,
       "title": "Tarefas de casa",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel facilisis volutpat est velit egestas dui. Enim praesent elementum facilisis leo vel fringilla est ullamcorper.",

@@ -16,7 +16,6 @@ const StatusBar = ({ taskList }) => {
             let todoPercent = 100 - donePercent;
             setDone(donePercent + '%');
             setTodo(todoPercent + '%');
-            console.log(doneTasks);
         }
     }, [taskList]);
 
