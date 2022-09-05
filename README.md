@@ -23,7 +23,7 @@ _Caso queira ver o projeto desenvolvido por mim e minha equipe no último Progra
 <!-- prettier-ignore -->
 | 🪧 Vitrine Dev |     |
 | ------------- | --- |
-| ✨ Nome        | **Orange Notes** |
+| ✨ Nome        | **Orange Notes** - FCamara |
 | 🏷️ Tecnologias | React, Vite, Sass, HTML, json-server, headless-ui, react-icons |
 | 🚀 URL Front-end | [**Acesse o site**](https://orange-notes-on.vercel.app/) ou veja como rodar localmente no item [**⚙️ Como usar**](#howto) |
 | 🚀 URL Back-end | [https://orange-notes-on.herokuapp.com/cards](https://orange-notes-on.herokuapp.com/cards) |
