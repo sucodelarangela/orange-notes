@@ -168,7 +168,7 @@ git clone https://github.com/sucodelarangela/orange-notes.git
 
 6. To use the app, open your favorite browser and go to the URL `http://localhost:5173/`. You can log in the application using any e-mail address and password that respects the front end validations.
 
-<a href='#top'>🔼 Voltar ao topo</a>
+<a href='#top'>🔼 Back to top</a>
 
 ---
 
