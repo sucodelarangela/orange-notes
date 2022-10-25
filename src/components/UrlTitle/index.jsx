@@ -18,9 +18,9 @@ const UrlTitle = ({ href }) => {
 
     return (
         <a className='create__sections--link' href={href} target='_blank'>
-            //{loading && <span>Carregando...</span>}
+            {/*{loading && <span>Carregando...</span>}*/}
             {href}
-            //{pageTitle == null ? href : pageTitle}
+            {/*{pageTitle == null ? href : pageTitle}*/}
         </a>
     );
 };
