@@ -18,9 +18,9 @@ import { useState } from 'react';
 
 const Create = () => {
     const { id } = useParams();
-    const url = `https://orange-notes-on.herokuapp.com/cards/${id}`;
+    const url = `https://abounding-internal-bench.glitch.me/cards/${id}`;
     // const url = `http://localhost:8000/cards/${id}`;
-    const { httpConfig } = useFetch('https://orange-notes-on.herokuapp.com/cards/');
+    const { httpConfig } = useFetch('https://abounding-internal-bench.glitch.me/cards');
     // const { httpConfig } = useFetch('http://localhost:8000/cards/');
     const { data: card, httpConfig: patchConfig, loading } = useFetch(url);
 

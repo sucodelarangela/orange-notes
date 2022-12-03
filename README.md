@@ -12,11 +12,11 @@ Faça o login na aplicação utilizando qualquer e-mail e senha que atenda os re
 
 ### 🩹 Melhorias necessárias
 
--   Ao tentar salvar o card sem alterações nos dados já existentes, ocorre um erro que trava a aplicação. Neste caso, deve-se atualizar a página com F5 (os dados atuais não são perdidos);
--   Melhorar validação do formulário de login também no _submit_ e não apenas no _blur_, acrescentando também mensagens específicas para cada tipo de erro;
--   Na criação das tarefas dos cards, resetar o valor do _input_ a cada nova tarefa (da forma como está, ao resetar o _input_ salva a tarefa com texto vazio);
--   Implementar sistema de login com autenticação;
--   Substituir json-server por banco de dados relacional.
+- Ao tentar salvar o card sem alterações nos dados já existentes, ocorre um erro que trava a aplicação. Neste caso, deve-se atualizar a página com F5 (os dados atuais não são perdidos);
+- Melhorar validação do formulário de login também no _submit_ e não apenas no _blur_, acrescentando também mensagens específicas para cada tipo de erro;
+- Na criação das tarefas dos cards, resetar o valor do _input_ a cada nova tarefa (da forma como está, ao resetar o _input_ salva a tarefa com texto vazio);
+- Implementar sistema de login com autenticação;
+- Substituir json-server por banco de dados relacional.
 
 _Caso queira ver o projeto desenvolvido por mim e minha equipe no último Programa de Formação da FCamara, basta acessar [este repositório](https://github.com/catiuu/TechnicalShare_FCamara_front)._
 
@@ -26,7 +26,7 @@ _Caso queira ver o projeto desenvolvido por mim e minha equipe no último Progra
 | ✨ Nome        | **Orange Notes** - Desafio FCamara |
 | 🏷️ Tecnologias | React, Vite, Sass, HTML, json-server, headless-ui, react-icons |
 | 🚀 URL Front-end | [**Acesse o site**](https://orange-notes-on.vercel.app/) ou veja como rodar localmente no item [**⚙️ Como usar**](#howto) |
-| 🚀 URL Back-end | [https://orange-notes-on.herokuapp.com/cards](https://orange-notes-on.herokuapp.com/cards) |
+| 🚀 URL Back-end | [https://abounding-internal-bench.glitch.me/cards](https://abounding-internal-bench.glitch.me/cards) |
 | 🔥 Desafio     | [Orange Notes - Regulamento e problemática](https://raw.githubusercontent.com/sucodelarangela/orange-notes/main/public/Regulamento.pdf) |
 
 ![](https://raw.githubusercontent.com/sucodelarangela/orange-notes/main/public/og-image.png#vitrinedev)
@@ -111,11 +111,11 @@ _In case you want to see the project developed by my team during the last Progra
 
 ### 🩹 Improvements needed
 
--   When trying to save the card without changing the existing data, an error occurs and the page stops responding. In this case, hit **F5** to reload the page (the current data is not lost);
--   Review login form validation on _submit_ and not only on _blur_, adding specific error messages;
--   When creating new tasks inside the cards, reset the value of the _input_ at every new task added (the way it is now, when resetting the _input_ the tasks is saved with empty value);
--   Implementing login system with authentication;
--   Replace json-server with relational database.
+- When trying to save the card without changing the existing data, an error occurs and the page stops responding. In this case, hit **F5** to reload the page (the current data is not lost);
+- Review login form validation on _submit_ and not only on _blur_, adding specific error messages;
+- When creating new tasks inside the cards, reset the value of the _input_ at every new task added (the way it is now, when resetting the _input_ the tasks is saved with empty value);
+- Implementing login system with authentication;
+- Replace json-server with relational database.
 
 ### ⚙️ How to use it
 
