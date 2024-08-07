@@ -7,8 +7,7 @@ import { useFetch } from '../../hooks/useFetch';
 import { useEffect } from 'react';
 
 const Home = () => {
-    // const url = 'http://localhost:8000/cards';
-    const url = 'https://abounding-internal-bench.glitch.me/cards';
+    const url = 'https://orange-juice-server.glitch.me/cards';
     const { data: cards, loading, error } = useFetch(url);
 
     useEffect(() => {
